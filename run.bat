@@ -1,1 +1,1 @@
-robot testing_saucedemo_M
+robot Testing_Saucedemo_M
