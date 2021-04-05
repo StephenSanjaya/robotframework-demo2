@@ -1,0 +1,8 @@
+${username};${password};${error};
+locked_out_user;${VALID_PASSWORD};Sorry, this user has been locked out.;
+${EMPTY};${VALID_PASSWORD};Username is required;
+${VALID_USERNAME};${EMPTY};Password is required;
+${VALID_USERNAME};${EMPTY};Password is required;
+invalid;invalid;Username and password do not match any user in this service.;
+invalid;${VALID_PASSWORD};Username and password do not match any user in this service.;
+${VALID_USERNAME};invalid;Username and password do not match any user in this service.;
