@@ -27,7 +27,7 @@ Click Add To Cart
     Click Element                   ${vg_add_to_cart}
 
 Click Cart
-    Click Element       ${btn_cart}
+    Click Element                   ${btn_cart}
 
 Click Checkout 
     Wait Until Element Is Visible   ${txt_title_yourcart}    
