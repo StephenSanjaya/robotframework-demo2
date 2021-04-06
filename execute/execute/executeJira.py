@@ -24,9 +24,9 @@ xmlPath = "C:\Internship\AutomationTesting\Saucedemo-Mobile\output.xml"
 ConfigFile = ""
 DeviceName = "Android"
 
-f = open(ConfigFile, "r")
-DeviceTest = f.read()
-postString = DeviceTest.split("\n",1)[1]
+# f = open(ConfigFile, "r")
+# DeviceTest = f.read()
+postString = "No Config Now" #DeviceTest.split("\n",1)[1]
 print(postString)
 preconfig = '==========>Device Test Information<============' +'\n'
 preconfig += postString
@@ -46,7 +46,7 @@ jira = JIRA(server= HOST,basic_auth=(UserName, Token))
 for tc in testCaseFail:
     
     new_issue = jira.create_issue(project='D7M', summary='['+DeviceName+']'+tc.testName, description=preconfig + tc.getStringTestCase(), issuetype={'name': 'Bug'})
-    fileName = tc.captureScreen
+    fileName = "" #tc.captureScreen
     if fileName != "":
         path = ReportPath+fileName
         print(path)
@@ -57,7 +57,3 @@ for tc in testCaseFail:
     # parent_issue = jira.issue('AUTO-135')
     # jira.create_issue_link('tests', new_issue, parent_issue, None)
     break                  
-
-
-
-
