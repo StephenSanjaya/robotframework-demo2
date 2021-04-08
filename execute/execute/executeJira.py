@@ -14,9 +14,9 @@ print('Argument List:', str(sys.argv))
 
 
 
-HOST = 'https://mdltel.atlassian.net/'
-UserName = 'samuel.tambunan@phintraco.com'
-Token   = 'rzfMhrmUbhXgwRybQ4bmD0EA'
+HOST = 'https://team-1617605645510.atlassian.net/'
+UserName = 'sanjaya.stephen@gmail.com'
+Token   = 'OaU2ioNEyIqGH4j6gwXX881F'
 ReportPath = "C:\Internship\AutomationTesting\Saucedemo-Mobile"
 
 xmlPath = "C:\Internship\AutomationTesting\Saucedemo-Mobile\output.xml"
@@ -45,7 +45,7 @@ jira = JIRA(server= HOST,basic_auth=(UserName, Token))
 
 for tc in testCaseFail:
     
-    new_issue = jira.create_issue(project='D7M', summary='['+DeviceName+']'+tc.testName, description=preconfig + tc.getStringTestCase(), issuetype={'name': 'Bug'})
+    new_issue = jira.create_issue(project='MST', summary='['+DeviceName+']'+tc.testName, description=preconfig + tc.getStringTestCase(), issuetype={'name': 'Bug'})
     fileName = "" #tc.captureScreen
     if fileName != "":
         path = ReportPath+fileName
