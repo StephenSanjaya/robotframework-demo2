@@ -1,7 +1,7 @@
 
 echo %path%
-set DeviceName=sm_android_API10
-set OutputFolder=report\
+set DeviceName=%1
+set OutputFolder=%2
 
 set port=4725
 @REM set TAG=Inbox
