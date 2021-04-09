@@ -46,7 +46,7 @@ jira = JIRA(server= HOST,basic_auth=(UserName, Token))
 for tc in testCaseFail:
     
     new_issue = jira.create_issue(project='MST', summary='['+DeviceName+']'+tc.testName, description=preconfig + tc.getStringTestCase(), issuetype={'name': 'Bug'})
-    fileName = tc.captureScree #----
+    fileName = tc.captureScreen #----
     if fileName != "":
         path = ReportPath+fileName
         print(path)
