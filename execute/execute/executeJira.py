@@ -15,7 +15,7 @@ print('Argument List:', str(sys.argv))
 
 
 HOST = 'https://team-1617605645510.atlassian.net/'
-UserName = 'sanjaya.stephen@gmail.com'
+UserName = 'sanjayastephen5@gmail.com'
 Token   = '8BqeTaz63UBDD3oh2Slr3986'
 ReportPath = sys.argv[1]
 
