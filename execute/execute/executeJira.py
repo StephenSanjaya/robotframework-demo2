@@ -24,8 +24,8 @@ xmlPath = sys.argv[2]
 ConfigFile = sys.argv[3]
 DeviceName = sys.argv[4]
 
-f = open(ConfigFile, "r") #
-DeviceTest = f.read() #
+f = open(ConfigFile, "r") #----
+DeviceTest = f.read() #------
 postString = DeviceTest.split("\n",1)[1] #No Config Now
 print(postString)
 preconfig = '==========>Device Test Information<============' +'\n'
@@ -46,7 +46,7 @@ jira = JIRA(server= HOST,basic_auth=(UserName, Token))
 for tc in testCaseFail:
     
     new_issue = jira.create_issue(project='MST', summary='['+DeviceName+']'+tc.testName, description=preconfig + tc.getStringTestCase(), issuetype={'name': 'Bug'})
-    fileName = tc.captureScree" #
+    fileName = tc.captureScree #----
     if fileName != "":
         path = ReportPath+fileName
         print(path)
