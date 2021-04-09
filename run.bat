@@ -26,11 +26,11 @@ robot --variable device:%DeviceName% --variable port:%port% --output %output%out
 @REM python %jira% %output% %xmlfile% %DeviceName% 
 @REM echo 'Done push bug Jira'
 
-@REM echo 'Start push bug Jira'
-@REM set jira=%projectFolder%execute\execute\executeJira.py
-@REM set xmlfile=%output%output.xml
-@REM python %jira% %output% %xmlfile% "%WORKSPACE%\resources\devices\%DeviceName%.robot"  %DeviceName%
-@REM echo 'Done push bug Jira'
+echo 'Start push bug Jira'
+set jira=%projectFolder%execute\execute\executeJira.py
+set xmlfile=%output%output.xml
+python %jira% %output% %xmlfile% "%WORKSPACE%\resources\devices\%DeviceName%.robot"  %DeviceName%
+echo 'Done push bug Jira'
 
 exit 0
 

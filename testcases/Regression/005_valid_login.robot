@@ -8,7 +8,6 @@ Input Valid Crendential
     Input Password          ${VALID_PASSWORD}
     Click Login Button
     Login Should Success
-    Capture Page Screenshot
 
 *** Keywords ***
 Login Should Success
