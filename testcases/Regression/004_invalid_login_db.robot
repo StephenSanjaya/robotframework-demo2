@@ -18,9 +18,9 @@ Check Login For Invalid Crendential Through Database
     FOR    ${i}    IN RANGE     ${lengthOfData}
             Initialize System
             Run Keyword And Continue On Failure
-...         Login Template  ${queryResults[${i}][0]}
-...                         ${queryResults[${i}][1]}     
-...                         ${queryResults[${i}][2]}
+    ...     Login Template   ${queryResults[${i}][0]}
+    ...                      ${queryResults[${i}][1]}     
+    ...                      ${queryResults[${i}][2]}
             Close Application
     END
 
