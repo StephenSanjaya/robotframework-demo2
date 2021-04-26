@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.6 on win32)" generated="20210408 17:11:25.843" rpa="false">
+<suite id="s1" name="Testcases" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases">
+<suite id="s1-s1" name="Regression" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression">
+<suite id="s1-s1-s1" name="002 Invalid Login" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression\002_invalid_login.robot">
+<test id="s1-s1-s1-t1" name="Check Login For Invalid Crendential">
+<kw name="Initialize System" library="CommonKeyword" type="setup">
+<kw name="Open App" library="config">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>deviceName=${Device_Name}</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:27.107" endtime="20210408 17:11:34.506"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:27.106" endtime="20210408 17:11:34.506"></status>
+</kw>
+<kw name="Wait Until Saucedemo Image Show" library="CommonKeyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_image_saucedemo}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:34.507" endtime="20210408 17:11:36.421"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:34.506" endtime="20210408 17:11:36.421"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:27.106" endtime="20210408 17:11:36.421"></status>
+</kw>
+<kw name="Login Template">
+<arguments>
+<arg>locked_out_user</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>Sorry, this user has been locked out.</arg>
+</arguments>
+<kw name="Input Username" library="CommonKeyword">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:36.424" level="INFO">Typing text 'locked_out_user' into text field '//android.widget.EditText[@text='Username']'</msg>
+<status status="PASS" starttime="20210408 17:11:36.423" endtime="20210408 17:11:36.549"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:36.422" endtime="20210408 17:11:36.550"></status>
+</kw>
+<kw name="Input Password" library="CommonKeyword">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:36.554" level="INFO">Typing text 'secret_sauce' into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20210408 17:11:36.551" endtime="20210408 17:11:37.161"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:36.550" endtime="20210408 17:11:37.161"></status>
+</kw>
+<kw name="Click Login Button" library="CommonKeyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:37.164" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-LOGIN']'.</msg>
+<status status="PASS" starttime="20210408 17:11:37.162" endtime="20210408 17:11:37.767"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:37.162" endtime="20210408 17:11:37.767"></status>
+</kw>
+<kw name="Login Should Fail">
+<arguments>
+<arg>${error}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_error_message}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:37.767" endtime="20210408 17:11:38.506"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${txt_error_message}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210408 17:11:38.585" level="INFO">Element '//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView[@index='0']' text is 'Sorry, this user has been locked out.' </msg>
+<msg timestamp="20210408 17:11:38.585" level="INFO">${text} = Sorry, this user has been locked out.</msg>
+<status status="PASS" starttime="20210408 17:11:38.507" endtime="20210408 17:11:38.585"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg}</arg>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:38.586" endtime="20210408 17:11:38.586"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:37.767" endtime="20210408 17:11:38.586"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:36.422" endtime="20210408 17:11:38.586"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="teardown">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210408 17:11:38.586" endtime="20210408 17:11:38.926"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:27.105" endtime="20210408 17:11:38.926" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="Check Login For Invalid Crendential">
+<kw name="Initialize System" library="CommonKeyword" type="setup">
+<kw name="Open App" library="config">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>deviceName=${Device_Name}</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:38.931" endtime="20210408 17:11:45.633"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:38.930" endtime="20210408 17:11:45.633"></status>
+</kw>
+<kw name="Wait Until Saucedemo Image Show" library="CommonKeyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_image_saucedemo}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:45.634" endtime="20210408 17:11:47.749"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:45.633" endtime="20210408 17:11:47.750"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:38.930" endtime="20210408 17:11:47.750"></status>
+</kw>
+<kw name="Login Template">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>Username is required</arg>
+</arguments>
+<kw name="Input Username" library="CommonKeyword">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:47.754" level="INFO">Typing text '' into text field '//android.widget.EditText[@text='Username']'</msg>
+<status status="PASS" starttime="20210408 17:11:47.753" endtime="20210408 17:11:48.381"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:47.751" endtime="20210408 17:11:48.381"></status>
+</kw>
+<kw name="Input Password" library="CommonKeyword">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:48.384" level="INFO">Typing text 'secret_sauce' into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20210408 17:11:48.382" endtime="20210408 17:11:49.414"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:48.381" endtime="20210408 17:11:49.414"></status>
+</kw>
+<kw name="Click Login Button" library="CommonKeyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210408 17:11:49.418" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-LOGIN']'.</msg>
+<status status="PASS" starttime="20210408 17:11:49.415" endtime="20210408 17:11:50.017"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:49.414" endtime="20210408 17:11:50.017"></status>
+</kw>
+<kw name="Login Should Fail">
+<arguments>
+<arg>${error}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_error_message}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:50.018" endtime="20210408 17:11:50.741"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${txt_error_message}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210408 17:11:50.835" level="INFO">Element '//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView[@index='0']' text is 'Username is required' </msg>
+<msg timestamp="20210408 17:11:50.835" level="INFO">${text} = Username is required</msg>
+<status status="PASS" starttime="20210408 17:11:50.741" endtime="20210408 17:11:50.835"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg}</arg>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:50.835" endtime="20210408 17:11:50.836"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:50.017" endtime="20210408 17:11:50.836"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:47.751" endtime="20210408 17:11:50.836"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="teardown">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210408 17:11:50.837" endtime="20210408 17:11:51.274"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:38.929" endtime="20210408 17:11:51.274" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="Check Login For Invalid Crendential">
+<kw name="Initialize System" library="CommonKeyword" type="setup">
+<kw name="Open App" library="config">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>deviceName=${Device_Name}</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:11:51.281" endtime="20210408 17:12:01.751"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:51.281" endtime="20210408 17:12:01.751"></status>
+</kw>
+<kw name="Wait Until Saucedemo Image Show" library="CommonKeyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_image_saucedemo}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:01.752" endtime="20210408 17:12:04.821"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:01.751" endtime="20210408 17:12:04.821"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:51.280" endtime="20210408 17:12:04.821"></status>
+</kw>
+<kw name="Login Template">
+<arguments>
+<arg>${VALID_USERNAME}</arg>
+<arg>${EMPTY}</arg>
+<arg>Password is required</arg>
+</arguments>
+<kw name="Input Username" library="CommonKeyword">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:04.825" level="INFO">Typing text 'standard_user' into text field '//android.widget.EditText[@text='Username']'</msg>
+<status status="PASS" starttime="20210408 17:12:04.823" endtime="20210408 17:12:05.437"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:04.822" endtime="20210408 17:12:05.437"></status>
+</kw>
+<kw name="Input Password" library="CommonKeyword">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:05.442" level="INFO">Typing text '' into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20210408 17:12:05.438" endtime="20210408 17:12:06.535"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:05.438" endtime="20210408 17:12:06.535"></status>
+</kw>
+<kw name="Click Login Button" library="CommonKeyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:06.538" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-LOGIN']'.</msg>
+<status status="PASS" starttime="20210408 17:12:06.536" endtime="20210408 17:12:07.143"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:06.535" endtime="20210408 17:12:07.143"></status>
+</kw>
+<kw name="Login Should Fail">
+<arguments>
+<arg>${error}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_error_message}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:07.144" endtime="20210408 17:12:07.849"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${txt_error_message}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210408 17:12:07.936" level="INFO">Element '//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView[@index='0']' text is 'Password is required' </msg>
+<msg timestamp="20210408 17:12:07.936" level="INFO">${text} = Password is required</msg>
+<status status="PASS" starttime="20210408 17:12:07.850" endtime="20210408 17:12:07.936"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg}</arg>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:07.936" endtime="20210408 17:12:07.936"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:07.143" endtime="20210408 17:12:07.937"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:04.822" endtime="20210408 17:12:07.937"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="teardown">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210408 17:12:07.937" endtime="20210408 17:12:08.363"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:11:51.279" endtime="20210408 17:12:08.364" critical="yes"></status>
+</test>
+<doc>Test and verify if login is invalid</doc>
+<status status="PASS" starttime="20210408 17:11:25.881" endtime="20210408 17:12:08.367"></status>
+</suite>
+<suite id="s1-s1-s2" name="003 Invalid Login Json" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression\003_invalid_login_json.robot">
+<kw name="Json File" type="setup">
+<kw name="Load JSON From File" library="JSONLibrary">
+<doc>Load JSON from file.</doc>
+<arguments>
+<arg>./Data_Set/users.json</arg>
+</arguments>
+<assign>
+<var>${json_obj}</var>
+</assign>
+<msg timestamp="20210408 17:12:10.061" level="INFO">${json_obj} = {'users': [{'username': 'locked_out_user', 'password': 'secret_sauce', 'error': 'Sorry, this user has been locked out.'}, {'username': 'standard_user', 'password': '', 'error': 'Password is required'}...</msg>
+<status status="PASS" starttime="20210408 17:12:10.042" endtime="20210408 17:12:10.061"></status>
+</kw>
+<kw name="Convert JSON To String" library="JSONLibrary">
+<doc>Convert JSON object to string</doc>
+<arguments>
+<arg>${json_obj}</arg>
+</arguments>
+<assign>
+<var>${json_str}</var>
+</assign>
+<msg timestamp="20210408 17:12:10.061" level="INFO">${json_str} = {"users": [{"username": "locked_out_user", "password": "secret_sauce", "error": "Sorry, this user has been locked out."}, {"username": "standard_user", "password": "", "error": "Password is required"}...</msg>
+<status status="PASS" starttime="20210408 17:12:10.061" endtime="20210408 17:12:10.061"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>json.loads('''${json_str}''')</arg>
+<arg>json</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20210408 17:12:10.062" level="INFO">${data} = {'users': [{'username': 'locked_out_user', 'password': 'secret_sauce', 'error': 'Sorry, this user has been locked out.'}, {'username': 'standard_user', 'password': '', 'error': 'Password is required'}...</msg>
+<status status="PASS" starttime="20210408 17:12:10.062" endtime="20210408 17:12:10.062"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${data["users"]}</arg>
+</arguments>
+<assign>
+<var>${lengthOfData}</var>
+</assign>
+<msg timestamp="20210408 17:12:10.062" level="INFO">Length is 3</msg>
+<msg timestamp="20210408 17:12:10.063" level="INFO">${lengthOfData} = 3</msg>
+<status status="PASS" starttime="20210408 17:12:10.062" endtime="20210408 17:12:10.063"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:10.063" level="INFO">${data} = {'users': [{'username': 'locked_out_user', 'password': 'secret_sauce', 'error': 'Sorry, this user has been locked out.'}, {'username': 'standard_user', 'password': '', 'error': 'Password is required'}...</msg>
+<status status="PASS" starttime="20210408 17:12:10.063" endtime="20210408 17:12:10.063"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${lengthOfData}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:10.064" level="INFO">${lengthOfData} = 3</msg>
+<status status="PASS" starttime="20210408 17:12:10.063" endtime="20210408 17:12:10.064"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:10.042" endtime="20210408 17:12:10.064"></status>
+</kw>
+<test id="s1-s1-s2-t1" name="Check Login For Invalid Crendential Through Json File">
+<kw name="${i} IN RANGE [ ${lengthOfData} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Open Saucedemo Application">
+<msg timestamp="20210408 17:12:10.069" level="FAIL">No keyword with name 'Open Saucedemo Application' found.</msg>
+<status status="FAIL" starttime="20210408 17:12:10.069" endtime="20210408 17:12:10.069"></status>
+</kw>
+<status status="FAIL" starttime="20210408 17:12:10.065" endtime="20210408 17:12:10.069"></status>
+</kw>
+<status status="FAIL" starttime="20210408 17:12:10.065" endtime="20210408 17:12:10.069"></status>
+</kw>
+<status status="FAIL" starttime="20210408 17:12:10.064" endtime="20210408 17:12:10.070" critical="yes">No keyword with name 'Open Saucedemo Application' found.</status>
+</test>
+<doc>Test and verify if login is invalid &amp; fetch data from json file</doc>
+<status status="FAIL" starttime="20210408 17:12:08.374" endtime="20210408 17:12:10.072"></status>
+</suite>
+<suite id="s1-s1-s3" name="004 Invalid Login Db" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression\004_invalid_login_db.robot">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Connect To Database</arg>
+<arg>pymysql</arg>
+<arg>${db_name}</arg>
+<arg>${db_user}</arg>
+<arg>${db_pasword}</arg>
+<arg>${db_host}</arg>
+<arg>${db_port}</arg>
+<arg>AND</arg>
+<arg>Fetch Data</arg>
+<arg>AND</arg>
+<arg>Row Count In Users Table</arg>
+</arguments>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<arguments>
+<arg>pymysql</arg>
+<arg>${db_name}</arg>
+<arg>${db_user}</arg>
+<arg>${db_pasword}</arg>
+<arg>${db_host}</arg>
+<arg>${db_port}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:10.960" level="INFO">Connecting using : pymysql.connect(db=db_test, user=root, passwd=, host=127.0.0.1, port=3306, charset=None) </msg>
+<msg timestamp="20210408 17:12:13.270" level="FAIL">OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] No connection could be made because the target machine actively refused it)")</msg>
+<status status="FAIL" starttime="20210408 17:12:10.192" endtime="20210408 17:12:13.270"></status>
+</kw>
+<status status="FAIL" starttime="20210408 17:12:10.192" endtime="20210408 17:12:13.270"></status>
+</kw>
+<test id="s1-s1-s3-t1" name="Check Login For Invalid Crendential Through Database">
+<status status="FAIL" starttime="20210408 17:12:13.271" endtime="20210408 17:12:13.272" critical="yes">Parent suite setup failed:
+OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] No connection could be made because the target machine actively refused it)")</status>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="teardown">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20210408 17:12:13.276" level="INFO">Executing : Disconnect From Database</msg>
+<msg timestamp="20210408 17:12:13.276" level="FAIL">AttributeError: 'NoneType' object has no attribute 'close'</msg>
+<status status="FAIL" starttime="20210408 17:12:13.275" endtime="20210408 17:12:13.276">AttributeError: 'NoneType' object has no attribute 'close'</status>
+</kw>
+<doc>Test and verify if login is invalid &amp; fetch data from database</doc>
+<status status="FAIL" starttime="20210408 17:12:10.078" endtime="20210408 17:12:13.277">Suite setup failed:
+OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+Also suite teardown failed:
+AttributeError: 'NoneType' object has no attribute 'close'</status>
+</suite>
+<suite id="s1-s1-s4" name="005 Valid Login" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression\005_valid_login.robot">
+<kw name="Initialize System" library="CommonKeyword" type="setup">
+<kw name="Open App" library="config">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>deviceName=${Device_Name}</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:13.295" endtime="20210408 17:12:22.108"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:13.294" endtime="20210408 17:12:22.109"></status>
+</kw>
+<kw name="Wait Until Saucedemo Image Show" library="CommonKeyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element_image_saucedemo}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:22.109" endtime="20210408 17:12:25.161"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:22.109" endtime="20210408 17:12:25.161"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:13.294" endtime="20210408 17:12:25.162"></status>
+</kw>
+<test id="s1-s1-s4-t1" name="Input Valid Crendential">
+<kw name="Input Username" library="CommonKeyword">
+<arguments>
+<arg>${VALID_USERNAME}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:25.166" level="INFO">Typing text 'standard_user' into text field '//android.widget.EditText[@text='Username']'</msg>
+<status status="PASS" starttime="20210408 17:12:25.164" endtime="20210408 17:12:25.885"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:25.163" endtime="20210408 17:12:25.886"></status>
+</kw>
+<kw name="Input Password" library="CommonKeyword">
+<arguments>
+<arg>${VALID_PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:25.891" level="INFO">Typing text 'secret_sauce' into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20210408 17:12:25.888" endtime="20210408 17:12:26.510"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:25.887" endtime="20210408 17:12:26.510"></status>
+</kw>
+<kw name="Click Login Button" library="CommonKeyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:26.515" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-LOGIN']'.</msg>
+<status status="PASS" starttime="20210408 17:12:26.513" endtime="20210408 17:12:27.111"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:26.512" endtime="20210408 17:12:27.111"></status>
+</kw>
+<kw name="Login Should Success">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_title}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:27.113" endtime="20210408 17:12:29.022"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${txt_title}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210408 17:12:29.166" level="INFO">Element '//android.view.ViewGroup[@content-desc='test-Cart drop zone']/android.view.ViewGroup/android.widget.TextView[@index='0']' text is 'PRODUCTS' </msg>
+<msg timestamp="20210408 17:12:29.166" level="INFO">${text} = PRODUCTS</msg>
+<status status="PASS" starttime="20210408 17:12:29.022" endtime="20210408 17:12:29.166"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>PRODUCTS</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:29.166" endtime="20210408 17:12:29.166"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:27.112" endtime="20210408 17:12:29.167"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:25.162" endtime="20210408 17:12:29.167" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210408 17:12:13.280" endtime="20210408 17:12:29.170"></status>
+</suite>
+<suite id="s1-s1-s5" name="006 Order Item" source="C:\Internship\AutomationTesting\Saucedemo-Mobile\testcases\Regression\006_order_item.robot">
+<test id="s1-s1-s5-t1" name="Order The Expensive Item">
+<kw name="Click Filter">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${iv_filter}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:29.191" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-Modal Selector Button']/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20210408 17:12:29.189" endtime="20210408 17:12:29.502"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:29.188" endtime="20210408 17:12:29.503"></status>
+</kw>
+<kw name="Click Price (high to low)">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${vg_high_to_low}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:29.504" endtime="20210408 17:12:30.330"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${vg_high_to_low}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:30.333" level="INFO">Clicking element '//android.widget.ScrollView[@content-desc='Selector container']/android.view.ViewGroup/android.view.ViewGroup[@index='4']'.</msg>
+<status status="PASS" starttime="20210408 17:12:30.330" endtime="20210408 17:12:30.490"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:29.504" endtime="20210408 17:12:30.491"></status>
+</kw>
+<kw name="Click Add To Cart">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${vg_add_to_cart}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:30.492" endtime="20210408 17:12:31.390"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${vg_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:31.392" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-Item' and @index='0']/android.view.ViewGroup/android.view.ViewGroup[@content-desc='test-ADD TO CART']'.</msg>
+<status status="PASS" starttime="20210408 17:12:31.390" endtime="20210408 17:12:31.545"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:30.491" endtime="20210408 17:12:31.546"></status>
+</kw>
+<kw name="Click Cart">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_cart}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:31.550" level="INFO">Clicking element '//android.view.ViewGroup[@content-desc='test-Cart']/android.view.ViewGroup/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20210408 17:12:31.547" endtime="20210408 17:12:32.276"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:31.546" endtime="20210408 17:12:32.276"></status>
+</kw>
+<kw name="Click Checkout">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_title_yourcart}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:32.278" endtime="20210408 17:12:33.840"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>35</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:33.840" endtime="20210408 17:12:35.467"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btn_checkout}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:35.467" endtime="20210408 17:12:35.733"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_checkout}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:35.736" level="INFO">Clicking element '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[@content-desc='test-CHECKOUT']'.</msg>
+<status status="PASS" starttime="20210408 17:12:35.733" endtime="20210408 17:12:35.896"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:32.277" endtime="20210408 17:12:35.897"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_firstname}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:35.898" endtime="20210408 17:12:37.316"></status>
+</kw>
+<kw name="Input Valid Information">
+<arguments>
+<arg>stepen</arg>
+<arg>sanjaya</arg>
+<arg>11111</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_firstname}</arg>
+<arg>${firstname}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:37.319" level="INFO">Typing text 'stepen' into text field '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText[@text='First Name']'</msg>
+<status status="PASS" starttime="20210408 17:12:37.317" endtime="20210408 17:12:37.961"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_lastname}</arg>
+<arg>${lastname}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:37.963" level="INFO">Typing text 'sanjaya' into text field '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText[@text='Last Name']'</msg>
+<status status="PASS" starttime="20210408 17:12:37.961" endtime="20210408 17:12:38.988"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_postalcode}</arg>
+<arg>${postalcode}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:38.992" level="INFO">Typing text '11111' into text field '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText[@text='Zip/Postal Code']'</msg>
+<status status="PASS" starttime="20210408 17:12:38.988" endtime="20210408 17:12:40.067"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:37.316" endtime="20210408 17:12:40.067"></status>
+</kw>
+<kw name="Click Continue">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_continue}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:40.070" level="INFO">Clicking element '//android.widget.ScrollView[@content-desc='test-Checkout: Your Info']/android.view.ViewGroup/android.view.ViewGroup[@index='8']'.</msg>
+<status status="PASS" starttime="20210408 17:12:40.068" endtime="20210408 17:12:40.612"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:40.068" endtime="20210408 17:12:40.612"></status>
+</kw>
+<kw name="Click Finish">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_checkout_overview}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:40.614" endtime="20210408 17:12:42.219"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:42.219" endtime="20210408 17:12:43.580"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btn_finish}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:43.580" endtime="20210408 17:12:43.765"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_finish}</arg>
+</arguments>
+<msg timestamp="20210408 17:12:43.767" level="INFO">Clicking element '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[@index='14']'.</msg>
+<status status="PASS" starttime="20210408 17:12:43.765" endtime="20210408 17:12:43.919"></status>
+</kw>
+<kw name="Checkout should be success">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_checkout_complete}</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:43.921" endtime="20210408 17:12:45.256"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${txt_checkout_complete}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210408 17:12:45.330" level="INFO">Element '//android.view.ViewGroup/android.view.ViewGroup[@index='1']/android.widget.TextView[@text='CHECKOUT: COMPLETE!']' text is 'CHECKOUT: COMPLETE!' </msg>
+<msg timestamp="20210408 17:12:45.330" level="INFO">${text} = CHECKOUT: COMPLETE!</msg>
+<status status="PASS" starttime="20210408 17:12:45.256" endtime="20210408 17:12:45.330"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>CHECKOUT: COMPLETE!</arg>
+</arguments>
+<status status="PASS" starttime="20210408 17:12:45.330" endtime="20210408 17:12:45.331"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:43.920" endtime="20210408 17:12:45.331"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:40.613" endtime="20210408 17:12:45.332"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210408 17:12:45.332" endtime="20210408 17:12:45.794"></status>
+</kw>
+<status status="PASS" starttime="20210408 17:12:29.187" endtime="20210408 17:12:45.795" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210408 17:12:29.173" endtime="20210408 17:12:45.799"></status>
+</suite>
+<status status="FAIL" starttime="20210408 17:11:25.877" endtime="20210408 17:12:45.805"></status>
+</suite>
+<status status="FAIL" starttime="20210408 17:11:25.846" endtime="20210408 17:12:45.815"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="2">Critical Tests</stat>
+<stat pass="5" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="2" id="s1" name="Testcases">Testcases</stat>
+<stat pass="5" fail="2" id="s1-s1" name="Regression">Testcases.Regression</stat>
+<stat pass="3" fail="0" id="s1-s1-s1" name="002 Invalid Login">Testcases.Regression.002 Invalid Login</stat>
+<stat pass="0" fail="1" id="s1-s1-s2" name="003 Invalid Login Json">Testcases.Regression.003 Invalid Login Json</stat>
+<stat pass="0" fail="1" id="s1-s1-s3" name="004 Invalid Login Db">Testcases.Regression.004 Invalid Login Db</stat>
+<stat pass="1" fail="0" id="s1-s1-s4" name="005 Valid Login">Testcases.Regression.005 Valid Login</stat>
+<stat pass="1" fail="0" id="s1-s1-s5" name="006 Order Item">Testcases.Regression.006 Order Item</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210408 17:11:38.928" level="WARN">Multiple test cases with name 'Check Login For Invalid Crendential' executed in test suite 'Testcases.Regression.002 Invalid Login'.</msg>
+<msg timestamp="20210408 17:11:51.278" level="WARN">Multiple test cases with name 'Check Login For Invalid Crendential' executed in test suite 'Testcases.Regression.002 Invalid Login'.</msg>
+</errors>
+</robot>
